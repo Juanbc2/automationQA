@@ -7,11 +7,11 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Open;
 
-public class OpenThe implements Task {
+public class OpenThePersonas implements Task {
 
     private PageObject page;
 
-    public OpenThe(PageObject page){
+    public OpenThePersonas(PageObject page){
         this.page = page;
     }
 
@@ -20,10 +20,11 @@ public class OpenThe implements Task {
         //interactions
         actor.attemptsTo(Open.browserOn(page));
         actor.attemptsTo(saberMasButton.presionarSaberMas());
+
     }
 
 
-    public static OpenThe Browser(PageObject page){
-        return Tasks.instrumented(OpenThe.class,page);
+    public static OpenThePersonas Browser(PageObject page){
+        return Tasks.instrumented(OpenThePersonas.class,page);
     }
 }

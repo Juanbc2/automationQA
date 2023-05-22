@@ -1,8 +1,11 @@
 package co.udea.certificacion.calidad.stepdefinitions;
 
 import co.udea.certificacion.calidad.questions.ValidarPersonas;
-import co.udea.certificacion.calidad.tasks.OpenThe;
-import co.udea.certificacion.calidad.userinterfaces.UsuarioPage;
+import co.udea.certificacion.calidad.questions.ValidarSimulador;
+import co.udea.certificacion.calidad.tasks.OpenThePersonas;
+import co.udea.certificacion.calidad.tasks.OpenTheSimulador;
+import co.udea.certificacion.calidad.userinterfaces.creditosPage;
+import co.udea.certificacion.calidad.userinterfaces.personasPage;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -26,7 +29,7 @@ public class encontrar_credito_consumo_step_definition {
     private Actor personaNatural = Actor.named("Juan");
 
     @Before
-    public void preStage(){
+    public void preStage() {
         driver.manage().window().maximize();
         personaNatural.can(BrowseTheWeb.with(driver));
     }
@@ -35,14 +38,17 @@ public class encontrar_credito_consumo_step_definition {
     public void queMeEncuentroEnLaPaginaPersonas() {
         personaNatural.can(BrowseTheWeb.with(driver));
     }
-    @When("explore la pagina personas")
-    public void exploreLaPaginaPersonas() {
-        personaNatural.attemptsTo(OpenThe.Browser(new UsuarioPage()));
 
+    @When("encuentre el modulo de simulador")
+    public void encuentreElModuloDeSimulador() {
+        personaNatural.attemptsTo(OpenThePersonas.Browser(new personasPage()));
+        personaNatural.should(seeThat(ValidarPersonas.paginaCredito(), equalTo(true)));
+        personaNatural.attemptsTo(OpenTheSimulador.Simulador(new creditosPage()));
     }
-    @Then("puedo ver el boton saber mas para Creditos")
-    public void puedoVerBotonCreditos() {
-        personaNatural.should(seeThat(ValidarPersonas.paginaCredito(),equalTo(true)));
+
+    @Then("verifico que estoy en el simulador")
+    public void verificoQueEstoyEnElSimulador() {
+        personaNatural.should(seeThat(ValidarSimulador.paginaSimulador(), equalTo(true)));
     }
 }
 
