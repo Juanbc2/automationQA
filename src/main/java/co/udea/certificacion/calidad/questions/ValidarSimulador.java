@@ -4,7 +4,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
 
-import static co.udea.certificacion.calidad.userinterfaces.creditosPage.BOTONCONTINUAR;
+import static co.udea.certificacion.calidad.userinterfaces.personasPage.BOTONCONTINUAR;
 
 
 public class ValidarSimulador implements Question<Boolean> {

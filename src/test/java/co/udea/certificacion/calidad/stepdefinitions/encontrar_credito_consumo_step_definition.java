@@ -4,7 +4,6 @@ import co.udea.certificacion.calidad.questions.ValidarPersonas;
 import co.udea.certificacion.calidad.questions.ValidarSimulador;
 import co.udea.certificacion.calidad.tasks.OpenThePersonas;
 import co.udea.certificacion.calidad.tasks.OpenTheSimulador;
-import co.udea.certificacion.calidad.userinterfaces.creditosPage;
 import co.udea.certificacion.calidad.userinterfaces.personasPage;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -43,7 +42,7 @@ public class encontrar_credito_consumo_step_definition {
     public void encuentreElModuloDeSimulador() {
         personaNatural.attemptsTo(OpenThePersonas.Browser(new personasPage()));
         personaNatural.should(seeThat(ValidarPersonas.paginaCredito(), equalTo(true)));
-        personaNatural.attemptsTo(OpenTheSimulador.Simulador(new creditosPage()));
+        personaNatural.attemptsTo(OpenTheSimulador.Simulador(new personasPage()));
     }
 
     @Then("verifico que estoy en el simulador")

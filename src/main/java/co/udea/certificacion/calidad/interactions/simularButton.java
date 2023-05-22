@@ -5,7 +5,7 @@ import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 
-import static co.udea.certificacion.calidad.userinterfaces.creditosPage.BOTONSIMULAR;
+import static co.udea.certificacion.calidad.userinterfaces.personasPage.BOTONSIMULAR;
 
 public class simularButton implements Interaction {
     @Override
