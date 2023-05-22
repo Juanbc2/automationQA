@@ -7,14 +7,14 @@ import net.serenitybdd.screenplay.actions.Click;
 
 import static co.udea.certificacion.calidad.userinterfaces.personasPage.BOTONSIMULAR;
 
-public class simularButton implements Interaction {
+public class abrirSimulacion implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Click.on(BOTONSIMULAR));
 
     }
 
-    public static simularButton presionarSimular() {
-        return Tasks.instrumented(simularButton.class);
+    public static abrirSimulacion presionarSimular() {
+        return Tasks.instrumented(abrirSimulacion.class);
     }
 }

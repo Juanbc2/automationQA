@@ -9,15 +9,15 @@ import net.serenitybdd.screenplay.actions.Click;
 import static co.udea.certificacion.calidad.userinterfaces.personasPage.BOTONSABERMAS;
 import static co.udea.certificacion.calidad.userinterfaces.personasPage.CERRARMODAL;
 
-public class saberMasButton implements Interaction {
+public class abrirCreditos implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Click.on(CERRARMODAL));
         actor.attemptsTo(Click.on(BOTONSABERMAS));
     }
 
-    public static saberMasButton presionarSaberMas() {
-        return Tasks.instrumented(saberMasButton.class);
+    public static abrirCreditos presionarSaberMas() {
+        return Tasks.instrumented(abrirCreditos.class);
     }
 
 }

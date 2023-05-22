@@ -1,17 +1,18 @@
 package co.udea.certificacion.calidad.tasks;
 
-import co.udea.certificacion.calidad.interactions.saberMasButton;
+import co.udea.certificacion.calidad.interactions.abrirCreditos;
+import co.udea.certificacion.calidad.interactions.abrirSimulacion;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Open;
 
-public class OpenThePersonas implements Task {
+public class AbrirSimulacion implements Task {
 
     private PageObject page;
 
-    public OpenThePersonas(PageObject page){
+    public AbrirSimulacion(PageObject page){
         this.page = page;
     }
 
@@ -19,12 +20,13 @@ public class OpenThePersonas implements Task {
     public <T extends Actor> void performAs(T actor) {
         //interactions
         actor.attemptsTo(Open.browserOn(page));
-        actor.attemptsTo(saberMasButton.presionarSaberMas());
+        actor.attemptsTo(abrirCreditos.presionarSaberMas());
+        actor.attemptsTo(abrirSimulacion.presionarSimular());
 
     }
 
 
-    public static OpenThePersonas Browser(PageObject page){
-        return Tasks.instrumented(OpenThePersonas.class,page);
+    public static AbrirSimulacion Browser(PageObject page){
+        return Tasks.instrumented(AbrirSimulacion.class,page);
     }
 }
