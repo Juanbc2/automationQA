@@ -1,6 +1,5 @@
 package co.udea.certificacion.calidad.stepdefinitions;
 
-import co.udea.certificacion.calidad.questions.ValidarSimulador;
 import co.udea.certificacion.calidad.questions.ValidarTasasYTarifas;
 import co.udea.certificacion.calidad.tasks.llenarFormulario;
 import co.udea.certificacion.calidad.tasks.AbrirSimulacion;
@@ -13,7 +12,6 @@ import cucumber.api.java.en.When;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
-import net.serenitybdd.screenplay.actions.Click;
 import net.thucydides.core.annotations.Managed;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
@@ -46,11 +44,6 @@ public class encontrar_credito_consumo_step_definition {
 
     }
 
-    @Then("verifico que estoy en el simulador")
-    public void verificoQueEstoyEnElSimulador() {
-        personaNatural.should(seeThat(ValidarSimulador.paginaSimulador(), equalTo(true)));
-
-    }
     @When("ingrese satisfactoriamente los campos del formulario")
     public void relleneElFormulario(){
         personaNatural.attemptsTo(llenarFormulario.Simulacion(new simuladorPage()));

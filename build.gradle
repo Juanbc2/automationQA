@@ -15,13 +15,26 @@ buildscript {
 plugins {
     id "java"
     id "idea"
+    id "jacoco"
+    id "org.sonarqube" version "3.5.0.2730"
+
 }
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+    }
+}
+
+
 
 group = "org.udea"
 version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    mavenLocal()
+    jcenter()
 }
 
 
@@ -47,4 +60,5 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport
 }

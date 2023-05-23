@@ -13,11 +13,7 @@ public class ValidarTasasYTarifas implements Question<Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
         String stringTemporal = Text.of(TEXTORESULTADOS).viewedBy(actor).asString();
-        if (stringTemporal.contains(textoAValidarResultados)) {
-            return true;
-        } else {
-            return false;
-        }
+       return stringTemporal.contains(textoAValidarResultados);
     }
 
     public static ValidarTasasYTarifas paginaResultados() {
