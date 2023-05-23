@@ -6,6 +6,7 @@ import co.udea.certificacion.calidad.tasks.llenarFormulario;
 import co.udea.certificacion.calidad.tasks.AbrirSimulacion;
 import co.udea.certificacion.calidad.userinterfaces.personasPage;
 import co.udea.certificacion.calidad.userinterfaces.simuladorPage;
+import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -25,6 +26,7 @@ import static org.hamcrest.core.IsEqual.equalTo;
 
 public class encontrar_credito_consumo_step_definition {
 
+
     @Managed(driver = "edge")
     public WebDriver driver;
     private Actor personaNatural = Actor.named("Juan");
@@ -33,9 +35,18 @@ public class encontrar_credito_consumo_step_definition {
     public void preStage() {
         System.setProperty("webdriver.edge.driver",
                 Paths.get("src/test/resources/driver/msedgedriver.exe").toString());
+
         driver = new EdgeDriver();
         driver.manage().window().maximize();
         personaNatural.can(BrowseTheWeb.with(driver));
+    }
+
+    @After
+    public void tearDown() {
+        if (driver!=null) {
+            driver.close();
+            driver.quit();
+        }
     }
 
     @Given("que me encuentro en la pagina personas de bancolombia")
