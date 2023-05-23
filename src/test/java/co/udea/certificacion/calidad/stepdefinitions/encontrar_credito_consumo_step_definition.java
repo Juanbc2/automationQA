@@ -1,5 +1,6 @@
 package co.udea.certificacion.calidad.stepdefinitions;
 
+import co.udea.certificacion.calidad.questions.ValidarSimulador;
 import co.udea.certificacion.calidad.questions.ValidarTasasYTarifas;
 import co.udea.certificacion.calidad.tasks.llenarFormulario;
 import co.udea.certificacion.calidad.tasks.AbrirSimulacion;
@@ -42,6 +43,11 @@ public class encontrar_credito_consumo_step_definition {
     public void encuentreElModuloDeSimulador() {
         personaNatural.attemptsTo(AbrirSimulacion.Browser(new personasPage()));
 
+    }
+
+    @Then("verifico que estoy en el simulador")
+    public void verificoQueEstoyEnElSimulador() {
+        personaNatural.should(seeThat(ValidarSimulador.paginaSimulador(), equalTo(true)));
     }
 
     @When("ingrese satisfactoriamente los campos del formulario")
