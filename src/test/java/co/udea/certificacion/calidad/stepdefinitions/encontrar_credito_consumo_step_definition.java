@@ -20,7 +20,7 @@ import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.hamcrest.core.IsEqual.equalTo;
 
 
-@RunWith(CucumberWithSerenity.class)
+
 public class encontrar_credito_consumo_step_definition {
 
     @Managed(driver = "edge")
@@ -33,7 +33,7 @@ public class encontrar_credito_consumo_step_definition {
         personaNatural.can(BrowseTheWeb.with(driver));
     }
 
-    @Given("que me encuentro en la pagina personas de Bancolombia")
+    @Given("que me encuentro en la pagina personas de bancolombia")
     public void queMeEncuentroEnLaPaginaPersonas() {
         personaNatural.can(BrowseTheWeb.with(driver));
     }

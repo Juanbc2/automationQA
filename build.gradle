@@ -20,7 +20,7 @@ plugins {
 
 }
 
-jacocoTestReport {
+tasks.jacocoTestReport {
     reports {
         xml.enabled true
     }
@@ -60,5 +60,4 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
-    finalizedBy jacocoTestReport
 }

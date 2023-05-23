@@ -3,8 +3,6 @@ package co.udea.certificacion.calidad.questions;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
-
-import static co.udea.certificacion.calidad.userinterfaces.personasPage.BOTONCONTINUAR;
 import static co.udea.certificacion.calidad.userinterfaces.resultadosPage.TEXTORESULTADOS;
 
 public class ValidarTasasYTarifas implements Question<Boolean> {
