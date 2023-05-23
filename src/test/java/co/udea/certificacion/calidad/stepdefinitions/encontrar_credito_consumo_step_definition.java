@@ -15,7 +15,9 @@ import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.thucydides.core.annotations.Managed;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+
 import java.nio.file.Paths;
+
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.hamcrest.core.IsEqual.equalTo;
 
@@ -31,9 +33,7 @@ public class encontrar_credito_consumo_step_definition {
     public void preStage() {
         System.setProperty("webdriver.edge.driver",
                 Paths.get("src/test/resources/driver/msedgedriver.exe").toString());
-        if (driver == null) {
-            driver = new EdgeDriver();
-        }
+        driver = new EdgeDriver();
         driver.manage().window().maximize();
         personaNatural.can(BrowseTheWeb.with(driver));
     }
