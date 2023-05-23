@@ -34,7 +34,7 @@ public class encontrar_credito_consumo_step_definition {
     @Before
     public void preStage() {
         System.setProperty("webdriver.edge.driver",
-                Paths.get("src/test/resources/driver/msedgedriver.exe").toString());
+                "src/test/resources/driver/msedgedriver.exe");
 
         driver = new EdgeDriver();
         driver.manage().window().maximize();
