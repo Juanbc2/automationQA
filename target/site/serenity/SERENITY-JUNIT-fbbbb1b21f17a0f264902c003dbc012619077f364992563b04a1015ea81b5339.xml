@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Ingresar al simulador de credito de libre inversion en Bancolombia" skipped="0" tests="2" time="15.59" timestamp="2023-05-21 11:54:42"><testcase name="Buscar el apartado de creditos en la seccion personas de Bancolombia"/><testcase name="Buscar el apartado de simulador de credito de libre inversion"><failure message="Expected enabled element was not enabled" type="net.thucydides.core.webdriver.exceptions.ElementShouldBeEnabledException">Expected enabled element was not enabled</failure><system-err>Expected enabled element was not enabled&#13;
+co.udea.certificacion.calidad.interactions.abrirSimulacion.performAs(simularButton.java:13)&#13;
+co.udea.certificacion.calidad.tasks.OpenTheSimulador.performAs(OpenTheSimulador.java:12)&#13;
+co.udea.certificacion.calidad.stepdefinitions.encontrar_credito_consumo_step_definition.exploreLaPaginaDeCreditos(encontrar_credito_consumo_step_definition.java:55)&#13;
+cucumber.runner.Runner.runPickle(Runner.java:80)&#13;
+</system-err></testcase></testsuite>
