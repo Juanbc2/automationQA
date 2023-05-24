@@ -19,5 +19,4 @@ public class abrirCreditos implements Interaction {
     public static abrirCreditos presionarSaberMas() {
         return Tasks.instrumented(abrirCreditos.class);
     }
-
 }
